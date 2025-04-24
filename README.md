@@ -43,48 +43,6 @@ df.sort_index(inplace=True)
 
 
 
-##**Feature engineering**
-
-5, 10, 50-day moving averages (.rolling().mean().shift(1)) to avoid data leakage 
-Gist
-
-Daily returns (.pct_change().shift(1) * 100) and 10-day volatility
-
-**Train/Test split**
-Chronological split at January 1, 2023 to prevent look-ahead bias .
-
-##**Modeling Approaches**
-**ARIMA**
-Order selection with pmdarima.auto_arima (stepwise AIC minimization) 
-HackerNoon
-
-Fitting via statsmodels.tsa.arima.model.ARIMA
-
-Forecasting with the .forecast() method for out-of-sample predictions
-
-**LSTM**
-Normalization using sklearn.preprocessing.MinMaxScaler(feature_range=(0,1))
-
-Sliding window dataset (time_step=100) via a custom generator
-
-Keras Sequential model: two LSTM layers (50 units each), dense layers, trained with Adam optimizer 
-Medium
-
-Iterative forecasting for 30-day horizon
-
-**Prophet**
-**Data format:** DataFrame with ds (date) and y (value) columns 
-Reddit
-
-**Model:** Prophet(changepoint_prior_scale=0.1, multiplicative seasonality)
-
-
-Forecast: make_future_dataframe(periods=30)
-
-Evaluation & Results
-We assess models via:
-
-
 ## Evaluation & Results
 
 We assess models via the following metrics:
