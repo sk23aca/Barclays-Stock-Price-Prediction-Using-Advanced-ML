@@ -26,27 +26,6 @@ Evaluation: standardized error metrics and visualizations of actual vs. predicte
 
 Forecasting: 30-day ahead projections for all models, plus a simple ensemble.
 
-Installation
-Clone the repository
-
-bash
-Copy
-Edit
-git clone https://github.com/yourusername/barclays-stock-forecast.git
-cd barclays-stock-forecast
-Create a virtual environment
-
-bash
-Copy
-Edit
-python3 -m venv venv
-source venv/bin/activate
-Install dependencies
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
 Data Acquisition & Preprocessing
 Download data
 
