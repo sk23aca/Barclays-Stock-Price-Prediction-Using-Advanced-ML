@@ -1,37 +1,47 @@
-**Project Overview**
-This repository provides an end-to-end framework for forecasting the Open and Close prices of Barclays PLC (ticker BARC.L) using three complementary models:
+## Project Overview
+This repository provides an end-to-end framework for forecasting the **Open** and **Close** prices of Barclays PLC (ticker **BARC.L**) using three complementary models:
 
-**ARIMA** – A classical linear time-series model serving as a robust baseline.
+- **ARIMA** – A classical linear time-series model serving as a robust baseline.  
+- **LSTM** – A deep-learning approach capturing non-linear dependencies in sequential data.  
+- **Prophet** – Facebook’s decomposable model, excelling at trend, seasonality, and holiday effects.
 
-**LSTM** – A deep‐learning approach capturing non-linear dependencies in sequential data.
+We source ten years of historical data (2014–2023) via the **yfinance** library, engineer technical indicators (moving averages, returns, volatility), and rigorously compare model performance under various market regimes. Forecast accuracy is measured via MSE, RMSE, MAE, MAPE, and R²—offering actionable insights for traders and analysts.
 
-**Prophet** – Facebook’s decomposable model, excelling at seasonality and holiday effects.
+---
 
-We source ten years of historical data (2014–2023) via the yfinance library, engineer technical indicators (moving averages, returns, volatility), and rigorously compare model performance under various market regimes. Forecast accuracy is measured through multiple metrics (MSE, RMSE, MAE, MAPE, R²), offering actionable insights for traders and analysts.
+## Features
+- **Data Ingestion**  
+  Fetch historical OHLCV data from Yahoo Finance using `yfinance`.  
+- **Preprocessing**  
+  - Rolling feature computation with Pandas  
+  - Missing-value handling  
+  - Chronological train/test split  
+- **Modeling**  
+  - **ARIMA**: Order selection via `pmdarima.auto_arima`  
+  - **LSTM**: Sequence modeling with Keras (two LSTM layers)  
+  - **Prophet**: Trend and seasonality decomposition  
+- **Evaluation**  
+  Standardized error metrics and visualizations of actual vs. predicted prices.  
+- **Forecasting**  
+  30-day ahead projections for all models, plus a simple ensemble.
 
-**Features**
-**Data Ingestion from Yahoo Finance using yfinance.**
+---
 
-**Preprocessing:** rolling feature computation with Pandas, missing-value handling, and train/test split by date.
+## Data Acquisition & Preprocessing
 
-**Modeling:**
-
-ARIMA order selection via pmdarima.auto_arima
-
-Sequence modeling with Keras LSTM
-
-Trend/seasonality decomposition with Prophet
-
-**Evaluation:** standardized error metrics and visualizations of actual vs. predicted prices.
-
-**Forecasting:** 30-day ahead projections for all models, plus a simple ensemble.
-
-**Data Acquisition & Preprocessing**
-**Download data**
-
+### Download data
+python
 import yfinance as yf
-df = yf.download("BARC.L", "2014-01-01", "2023-12-31", interval="1d")
+
+df = yf.download(
+    "BARC.L",
+    start="2014-01-01",
+    end="2023-12-31",
+    interval="1d"
+)
 df.sort_index(inplace=True)
+
+
 
 **Feature engineering**
 
