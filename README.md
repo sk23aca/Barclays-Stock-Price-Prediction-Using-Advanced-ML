@@ -75,10 +75,15 @@ Evaluation & Results
 We assess models via:
 
 
-**Model	      Open RMSE	      Close RMSE	       Open MAPE	      Close MAPE	        Open R²	          Close R²**
-**ARIMA**	     ~54.6	            ~53.6	            ~20.7%	        ~21.1%	            0.89	              0.83
-**LSTM**	      ~7.4	            ~6.1	            ~30.98%	        ~30.49%	            0.98	              0.99
-**Prophet**	    ~14.80	          ~17.84          	~6.18%	        ~7.88%	            0.73	              0.83
+## Evaluation & Results
+
+We assess models via the following metrics:
+
+| **Model**  | **Open RMSE** | **Close RMSE** | **Open MAPE** | **Close MAPE** | **Open R²** | **Close R²** |
+|------------|---------------|----------------|---------------|----------------|-------------|--------------|
+| **ARIMA**  | 54.6          | 53.6           | 20.7%         | 21.1%          | 0.89        | 0.83         |
+| **LSTM**   | 7.4           | 6.1            | 30.98%        | 30.49%         | 0.98        | 0.99         |
+| **Prophet**| 14.80         | 17.84          | 6.18%         | 7.88%          | 0.73        | 0.83         |
 
 **Key finding:** LSTM excels in capturing non-linear patterns and achieving high R², though MAPE is inflated by low actual values; Prophet offers a compelling trade-off between accuracy and interpretability; ARIMA remains a fast, transparent baseline.
 
