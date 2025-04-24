@@ -1,4 +1,4 @@
-Project Overview
+#Project Overview
 This repository provides an end-to-end framework for forecasting the Open and Close prices of Barclays PLC (ticker BARC.L) using three complementary models:
 
 ARIMA – A classical linear time-series model serving as a robust baseline.
