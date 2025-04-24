@@ -27,21 +27,6 @@ We source ten years of historical data (2014–2023) via the **yfinance** librar
 
 ---
 
-## Data Acquisition & Preprocessing
-
-### Download data
-python
-import yfinance as yf
-
-df = yf.download(
-    "BARC.L",
-    start="2014-01-01",
-    end="2023-12-31",
-    interval="1d"
-)
-df.sort_index(inplace=True)
-
-
 
 ## Evaluation & Results
 
