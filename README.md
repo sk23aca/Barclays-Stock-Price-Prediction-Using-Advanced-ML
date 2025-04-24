@@ -38,9 +38,9 @@ We assess models via the following metrics:
 | **LSTM**   | 7.4           | 6.1            | 30.98%        | 30.49%         | 0.98        | 0.99         |
 | **Prophet**| 14.80         | 17.84          | 6.18%         | 7.88%          | 0.73        | 0.83         |
 
----
 
-##Key finding:
+
+**Key finding:**
 LSTM excels in capturing non-linear patterns and achieving high R², though MAPE is inflated by low actual values; Prophet offers a compelling trade-off between accuracy and interpretability; ARIMA remains a fast, transparent baseline.
 
 ---
